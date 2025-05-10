@@ -1,0 +1,17 @@
+{
+  "name": "local-brew",
+  "version": "1.0.0",
+  "description": "Local Brew Coffee Shop Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
