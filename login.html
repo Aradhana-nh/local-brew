@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Local Brew</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    .hidden-tab { display: none; }
+    .tab-active { display: block; }
+  </style>
+</head>
+<body class="custom-body-styles font-sans bg-[var(--light-bg)]">
+
+  <header>
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="index.html" class="logo-link text-2xl">Local Brew</a>
+      <div>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link font-bold text-[var(--primary-color)]">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="min-h-screen flex items-center justify-center px-6 py-12">
+    <div class="max-w-md w-full bg-white p-8 rounded shadow-lg border border-gray-200">
+
+      <div class="flex justify-around mb-6">
+        <button id="signInTab" class="font-semibold text-[var(--primary-color)] border-b-2 border-[var(--primary-color)] pb-1">Sign In</button>
+        <button id="signUpTab" class="text-gray-500 hover:text-[var(--primary-color)]">Create Account</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="signInForm" class="space-y-5 tab-active">
+        <h2 class="text-xl font-bold text-center text-[var(--primary-color)]">Welcome Back</h2>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <input type="email" name="email" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" name="password" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <button type="submit" class="w-full bg-[var(--primary-color)] text-white py-2 rounded hover:bg-[var(--hover-accent)] transition">Sign In</button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signUpForm" class="space-y-5 hidden-tab">
+        <h2 class="text-xl font-bold text-center text-[var(--primary-color)]">Create Account</h2>
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" name="name" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+          <input type="tel" name="phone" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <div>
+          <label for="signupEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <input type="email" name="signupEmail" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <div>
+          <label for="signupPassword" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" name="signupPassword" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <div>
+          <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <input type="password" name="confirmPassword" required class="form-input w-full mt-1 px-4 py-2 border border-gray-300 rounded">
+        </div>
+        <button type="submit" class="w-full bg-[var(--primary-color)] text-white py-2 rounded hover:bg-[var(--hover-accent)] transition">Create Account</button>
+      </form>
+
+    </div>
+  </main>
+
+  <script>
+    const signInTab = document.getElementById('signInTab');
+    const signUpTab = document.getElementById('signUpTab');
+    const signInForm = document.getElementById('signInForm');
+    const signUpForm = document.getElementById('signUpForm');
+
+    signInTab.addEventListener('click', () => {
+      signInForm.classList.add('tab-active');
+      signInForm.classList.remove('hidden-tab');
+      signUpForm.classList.remove('tab-active');
+      signUpForm.classList.add('hidden-tab');
+    });
+
+    signUpTab.addEventListener('click', () => {
+      signUpForm.classList.add('tab-active');
+      signUpForm.classList.remove('hidden-tab');
+      signInForm.classList.remove('tab-active');
+      signInForm.classList.add('hidden-tab');
+    });
+
+    // Login
+    signInForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = signInForm.querySelector('input[name="email"]').value.trim();
+      const password = signInForm.querySelector('input[name="password"]').value.trim();
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        alert(data.message);
+      } catch (err) {
+        console.error(err);
+        alert('Login failed. Try again.');
+      }
+    });
+
+    // Signup
+    signUpForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = signUpForm.querySelector('input[name="name"]').value.trim();
+      const phone = signUpForm.querySelector('input[name="phone"]').value.trim();
+      const signupEmail = signUpForm.querySelector('input[name="signupEmail"]').value.trim();
+      const signupPassword = signUpForm.querySelector('input[name="signupPassword"]').value.trim();
+      const confirmPassword = signUpForm.querySelector('input[name="confirmPassword"]').value.trim();
+
+      try {
+        const res = await fetch('/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone, signupEmail, signupPassword, confirmPassword })
+        });
+        const data = await res.json();
+        alert(data.message);
+        if (res.status === 201) {
+          signInTab.click(); // Switch to login tab
+          signUpForm.reset();
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Signup failed. Try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>

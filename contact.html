@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Local Brew</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body class="custom-body-styles font-sans">
+
+    <header>
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="logo-link text-2xl">Local Brew</a>
+            <div>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link font-bold text-primary">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-header text-center py-16 md:py-24">
+             <div class="container mx-auto px-6">
+                 <h1 class="text-4xl md:text-5xl font-bold animate__animated animate__fadeInDown">Contact Us</h1>
+                 <p class="text-lg md:text-xl max-w-3xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">We'd love to hear from you!</p>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-6 py-16">
+
+            <div class="contact-grid">
+
+                <div class="contact-info scroll-animate">
+                    <h2>Visit or Call Us</h2> 
+
+                    <p><i class="fas fa-map-marker-alt"></i><strong>Address:</strong> 123 Coffee Lane, Brewville, CA 90210</p>
+                    <p><i class="fas fa-phone"></i><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i><strong>Email:</strong> hello@localbrew.example.com</p>
+
+                    <div class="hours-info">
+                         <h3><i class="fas fa-clock"></i> Hours</h3>
+                         <p>Mon - Fri: 7am - 6pm</p>
+                         <p>Sat - Sun: 8am - 5pm</p>
+                    </div>
+
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.720117492016!2d-118.4936131847819!3d34.0194449806059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4d7f9d3a1f1%3A0x16e4f1b3f6d9b6b!2sSanta%20Monica%20Pier!5e0!3m2!1sen!2sus!4v1678886500000!5m2!1sen!2sus"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                         </iframe>
+
+                    </div>
+                </div>
+
+                <div class="contact-form-container scroll-animate">
+                    <h2>Send Us a Message</h2> 
+
+                    <form id="contactForm">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="form-input"></textarea>
+                        </div>
+                        <div>
+
+                            <button type="submit">Send Message</button>
+                        </div>
+  
+                        <div id="form-status" class="mt-4 text-center"></div> 
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Local Brew. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a> |
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
+
+</body>
+</html>

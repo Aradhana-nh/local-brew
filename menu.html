@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Local Brew</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body class="custom-body-styles font-sans">
+
+    <header>
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="logo-link text-2xl">Local Brew</a>
+            <div>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link font-bold text-primary">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-header text-center py-16 md:py-24">
+             <div class="container mx-auto px-6">
+                 <h1 class="text-4xl md:text-5xl font-bold animate__animated animate__fadeInDown">Our Menu</h1>
+                 <p class="text-lg md:text-xl max-w-3xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">Freshly brewed, crafted with care.</p>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-6 py-16">
+
+
+            <div class="menu-category scroll-animate">
+                <h2>Espresso Drinks</h2> 
+                <div class="menu-grid">
+
+                    <div class="menu-card scroll-animate">
+
+                        <div class="menu-card-content">
+                            <h3>Classic Latte</h3> 
+                            <p>Smooth espresso with perfectly steamed milk and a touch of foam.</p>
+                            <div class="price">4.50 GBP</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card scroll-animate" style="animation-delay: 0.1s;">
+                        <div class="menu-card-content">
+                            <h3>Cappuccino</h3>
+                            <p>Equal parts espresso, steamed milk, and rich foam.</p>
+                            <div class="price">4.25 GBP</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card scroll-animate" style="animation-delay: 0.2s;">
+                        <div class="menu-card-content">
+                            <h3>Americano</h3>
+                            <p>Espresso shots topped with hot water.</p>
+                            <div class="price">3.75 GBP</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="menu-category scroll-animate">
+                <h2>Brewed Coffee</h2> 
+                <div class="menu-grid">
+
+                    <div class="menu-card scroll-animate">
+                        <div class="menu-card-content">
+                            <h3>Drip Coffee</h3>
+                            <p>Our signature house blend, brewed fresh throughout the day.</p>
+                            <div class="price">3.00 GBP</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card scroll-animate" style="animation-delay: 0.1s;">
+                        <div class="menu-card-content">
+                            <h3>Pour Over</h3>
+                            <p>Single origin beans, meticulously brewed by hand.</p>
+                            <div class="price">5.00 GBP</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card scroll-animate" style="animation-delay: 0.2s;">
+                        <div class="menu-card-content">
+                            <h3>Cold Brew</h3>
+                            <p>Slow-steeped for a smooth, low-acidity iced coffee.</p>
+                            <div class="price">4.75 GBP</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Local Brew. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a> |
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
